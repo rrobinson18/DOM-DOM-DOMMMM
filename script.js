@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementsByClassName('square-container')[0].appendChild(div);
         number++;
 
-    let square = document.getElementsByClassName('square');
+    
     
         div.addEventListener('dblclick', function (e) {
 
@@ -44,7 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             container.removeChild(e.target.previousSibling);
             }
-            square.addEventListener('click', randomColor);
+
+
+       
+        div.addEventListener('click', randomColor);
         
         function randomColor() {
             //array of colors
@@ -52,37 +55,13 @@ document.addEventListener('DOMContentLoaded', function () {
             //index of random color
             let i = Math.floor(Math.random() * colorArr.length);
           
-            event.target.style.color = colorArr[i];
-   
-        };
+         //   e.target.style.backgroundcolor = colorArr[i];
+            console.log(event.target);
+             };
 
-        };
-
-        
-        
-
-
-        /*
-
-        
-        let colorArr = ['green', 'blue', 'yellow', 'orange', 'brown', 'grey', 'red', 'white'];
-
-        div.addEventListener("click", chgColor(div));
-
-
-        function chgColor() {
-            let i = Math.floor(Math.random() * colorArr.length);
-
-            let randomColor = colorArr[i];
-
-           div.style.backgroundcolor = randomColor;
-
-           //console.log(randomColor);
-            return randomColor;
-        }
-   */
+          };
     
-    });
+        });
     });
     
 });
